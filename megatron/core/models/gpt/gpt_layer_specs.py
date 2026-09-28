@@ -182,6 +182,7 @@ def get_gpt_layer_with_transformer_engine_spec(
     fallback_to_eager_attn: bool = False,
     use_kitchen_attention: bool = False,
     kitchen_attention_backend: str = "sdpa",
+    normalization: Optional[str] = None,  # pylint: disable=unused-argument
 ) -> ModuleSpec:
     """Use this spec to use lower-level Transformer Engine modules (required for fp8 training).
 
@@ -197,6 +198,9 @@ def get_gpt_layer_with_transformer_engine_spec(
         qk_l2_norm (bool, optional): To use l2 norm for queries/keys. Defaults to False.
         use_te_op_fuser (bool, optional): Use Transformer Engine's operation-based API, which may
                                           enable certain operation fusions. Defaults to False.
+        normalization (str, optional): Accepted for compatibility with callers that also
+            select a local spec. Transformer Engine norm modules use config.normalization
+            when instantiated, so this argument does not change the spec.
 
     Returns:
         ModuleSpec: Module specification with TE modules
