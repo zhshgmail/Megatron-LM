@@ -883,6 +883,27 @@ class DistributedOptimizer(MixedPrecisionOptimizer):
                 self.load_parameter_state_from_fully_reshardable(param_state)
             elif sharding_type == 'dp_reshardable':
                 self.load_parameter_state_from_dp_reshardable(param_state)
+                # Candidate: ordinary BF16 DP=1 bucket-space restore coherence.
+                # No TP broadcast: retain each restored optimizer master's value.
+                if (
+                    self.config.bf16
+                    and self.data_parallel_group.size() == 1
+                    and not self.ddp_config.use_megatron_fsdp
+                    and not self.config.use_precision_aware_optimizer_no_fp8_or_ds_fp8
+                    and not self.ddp_config.reuse_grad_buf_for_mxfp8_param_ag
+                    and not any(
+                        is_float8tensor(p)
+                        for group in self.model_float16_groups for p in group
+                    )
+                ):
+                    # A DP=1 shard must cover the entire local model parameter.
+                    for groups in (self.model_float16_groups, self.model_fp32_groups):
+                        for group in groups:
+                            for model_param in group:
+                                r = self._get_model_param_range_map(model_param)["param"]
+                                assert r.start == 0 and r.end == model_param.numel()
+                    with torch.no_grad():
+                        self._copy_main_params_to_model_params()
             elif sharding_type == 'fully_sharded_model_space':
                 self.load_parameter_state_from_fs_model_space(param_state)
             else:

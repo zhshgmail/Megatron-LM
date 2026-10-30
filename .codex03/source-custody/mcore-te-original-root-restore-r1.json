@@ -1,0 +1,14 @@
+{
+  "scope": "Original standalone MCoreTE narrow ordinary-BF16/DP1/full-local-range dp_reshardable restore recipe; not a generic optimizer repair or current runtime PASS.",
+  "parent_commit": "90e6c13c2123add236ba6d7f97c57eaf79135bf9",
+  "original_source_code_cohort": "2fc25bc987f32eff9c3afbf5f3f17cb3d9a2753b",
+  "path": "megatron/core/optimizer/distrib_optimizer.py",
+  "before_sha256": "42c802e2cb5b3ee4712215c302943cf769bd29d58494484bd18979fe44d819cb",
+  "after_sha256": "fa3589ddd29790da269bf1dccf3ebd0aa156bda64052a57a41097594fea14423",
+  "patch_sha256": "8bbd60b60b96b145cbeba63e1a09379f289d82ad0e5b73e10ce9207311bc404e",
+  "recipe_source": "https://gitcode.com/zhengshencn_hwca/npu-autoport-pipeline/blob/9f085f760b4a4276f769c7f5a376aa6a28bfc413/docs/reports/RESTORE_MASTER_E307_STRICT_20261016.md",
+  "patch_source": "https://gitcode.com/zhengshencn_hwca/npu-autoport-pipeline/blob/fde42ad6fdc8a45e7960b410f79ba6a9b68a10da/docs/examples/mcore-te-full-workflow/restore-repair/CANDIDATE.diff",
+  "effects": "Restore each rank own master into existing model storage after successful state load; no TP broadcast, no reverse reload, no tolerance/workload change.",
+  "guards": "ordinary BF16,DP1,notMegatronFSDP,notprecision-aware,notMXFP8buffer,notFP8; assert complete local parameter range; preserve excluded modes.",
+  "acceptance": "Current full originalD100/ownD50E100/unchanged062adc strict still NOT_RUN. GPU/quality/human80/fresh168h/zeroHuman/causalRSI not qualified; whole0/2 retained."
+}
