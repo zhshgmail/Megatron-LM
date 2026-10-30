@@ -1477,7 +1477,7 @@ def load_args_from_checkpoint(
 
 
 def load_checkpoint(ddp_model, optimizer, opt_param_scheduler, load_arg='load', strict=True,
-                    checkpointing_context=None, skip_load_to_model_and_opt=False, tp_group: Optional[torch.distributed.ProcessGroup] = None, pp_group: Optional[torch.distributed.ProcessGroup] = None, dp_cp_group: Optional[torch.distributed.ProcessGroup] = None):
+                    checkpointing_context=None, skip_load_to_model_and_opt=False, tp_group: Optional[torch.distributed.ProcessGroup] = None, pp_group: Optional[torch.distributed.ProcessGroup] = None, dp_cp_group: Optional[torch.distributed.ProcessGroup] = None, *, defer_empty_cache=False):
     """Load a model checkpoint and return the iteration.
     strict (bool): whether to strictly enforce that the keys in
         :attr:`state_dict` of the checkpoint match the names of
@@ -1908,7 +1908,9 @@ def load_checkpoint(ddp_model, optimizer, opt_param_scheduler, load_arg='load', 
        or is_last_rank():
         wandb_utils.on_load_checkpoint_success(checkpoint_name, load_dir)
 
-    torch.cuda.empty_cache()
+    # The caller must clear after exiting its allocator region when deferred.
+    if not defer_empty_cache:
+        torch.cuda.empty_cache()
 
     if iteration > 0:
         # Notify FT that a checkpoint was loaded.
