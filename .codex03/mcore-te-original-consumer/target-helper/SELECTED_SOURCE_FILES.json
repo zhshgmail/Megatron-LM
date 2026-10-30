@@ -1,0 +1,34 @@
+{
+  "megatron/core/optimizer/distrib_optimizer.py": {
+    "bytes": 129975,
+    "sha256": "fa3589ddd29790da269bf1dccf3ebd0aa156bda64052a57a41097594fea14423"
+  },
+  "megatron/core/utils.py": {
+    "bytes": 94257,
+    "sha256": "92f269a64afdb15872db4d749eb8e4c78f809beb2e055a6a5a6ebc1f9bad6444"
+  },
+  "megatron/training/datasets/data_samplers.py": {
+    "bytes": 13741,
+    "sha256": "bab52b1546b1f0464864638a64c282432d084ec93ba40e4d74d79a763eb12242"
+  },
+  "megatron/training/arguments.py": {
+    "bytes": 166819,
+    "sha256": "ed8346e53e9e78966d176ba9461103e02c37312d8bbbab6b857079eaa6b12df6"
+  },
+  "pretrain_gpt.py": {
+    "bytes": 13695,
+    "sha256": "a1928aa8ad5aefd174c787cfab2b2f6b78a8545a651b751ceff337a057a8ba1b"
+  },
+  "megatron/core/datasets/helpers.cpp": {
+    "bytes": 29803,
+    "sha256": "dbc3429a1dac7a86946494a61d14fe5754538399e6413ca6939de46cc530b24b"
+  },
+  "megatron/core/datasets/Makefile": {
+    "bytes": 313,
+    "sha256": "0555c53484b55bf1a7e40aa4d2e09329f6767512282d428e2c868c677ed50350"
+  },
+  "megatron/core/datasets/helpers.py": {
+    "bytes": 2127,
+    "sha256": "2cdd3ed8dc66831203568c36b8932149c2db837cbb37bc3ea7ed8461ffaa428a"
+  }
+}
