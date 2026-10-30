@@ -1,0 +1,34 @@
+{
+  "scope": "Source custody for the original standalone MCore+TransformerEngine consumer; no new training or provenance certification for TE.",
+  "upstream": "https://github.com/NVIDIA/Megatron-LM",
+  "upstream_commit": "1dcf0dafa884ad52ffb243625717a3471643e087",
+  "parent_owned_commit": "97913075e3598afd37d672f1013cc1f4c5b8b9fd",
+  "matched_historical_source_commit": "3db572ee6f8a77954e63fb244d0da4acdc065585",
+  "base_comparison": "All2233 tracked blobs match historical selected source. Two existing executable-mode differences in filesystem_async.py and transformer_engine.py retained from parent custody; no byte differences.",
+  "original_public_recipe": "https://gitcode.com/zhengshencn_hwca/npu-autoport-pipeline/tree/3eae1a3ba1bb73339221e13d63c13601117ea8f5/docs/examples/mcore-te-full-workflow",
+  "changes": "Original optional dataloader worker generator/argument; published optional TE-version guard; original standalone Adaptor import. No altered original training workload or criterion.",
+  "input": "Salesforce/wikitext@b08601e04326c79dfdd32d625aee71d232d685c3 wikitext103 raw; gpt2@607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "acceptance": "Original D100 world4/TP4/PP1/12layers/hidden512/8heads/seq1024/micro4/global32/BF16/TE/distributed Adam/original overlaps/val10/test10/save50+100; E ownD50 to100; unchanged full endpoint comparator062adcbb41cde2a0170393d1e47b33cf698faee49603e91a32fb45739a81af83. GPU reference/quality/human80/full state/fresh168h/zeroHuman/causalRSI remain separate unqualified obligations.",
+  "source_files": [
+    {
+      "path": "megatron/training/datasets/data_samplers.py",
+      "bytes": 13741,
+      "sha256": "bab52b1546b1f0464864638a64c282432d084ec93ba40e4d74d79a763eb12242"
+    },
+    {
+      "path": "megatron/training/arguments.py",
+      "bytes": 166819,
+      "sha256": "ed8346e53e9e78966d176ba9461103e02c37312d8bbbab6b857079eaa6b12df6"
+    },
+    {
+      "path": "megatron/core/utils.py",
+      "bytes": 94257,
+      "sha256": "92f269a64afdb15872db4d749eb8e4c78f809beb2e055a6a5a6ebc1f9bad6444"
+    },
+    {
+      "path": "pretrain_gpt.py",
+      "bytes": 13695,
+      "sha256": "a1928aa8ad5aefd174c787cfab2b2f6b78a8545a651b751ceff337a057a8ba1b"
+    }
+  ]
+}

@@ -83,6 +83,15 @@ def build_pretraining_data_loader(dataset, consumed_samples):
         extra_kwargs = {"collate_fn": lambda x: x,}
     else:
         extra_kwargs = {}
+    # Keep iterator worker-seed draws independent of the model CPU RNG.
+    # Each loader owns its stream; recreation restarts that stream, not worker
+    # transform state. Opt-in callers must account for stochastic datasets.
+    worker_seed = getattr(args, 'dataloader_worker_seed', None)
+    if worker_seed is not None:
+        split_offset = split.value if isinstance(split, Split) else 0
+        extra_kwargs['generator'] = torch.Generator(device='cpu').manual_seed(
+            worker_seed + split_offset + 3 * mpu.get_data_parallel_rank()
+        )
     return torch.utils.data.DataLoader(
         dataset,
         batch_sampler=batch_sampler,

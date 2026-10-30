@@ -20,6 +20,7 @@ from functools import partial
 from typing import List, Optional, Tuple
 
 import torch
+import megatron_adaptor
 
 from gpt_builders import gpt_builder
 from megatron.core import parallel_state
