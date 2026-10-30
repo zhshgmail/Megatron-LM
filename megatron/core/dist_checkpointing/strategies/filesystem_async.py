@@ -223,7 +223,7 @@ class FileSystemWriterAsync(FileSystemWriter):
         for bucket in write_buckets:
             file_name, storage_key, (bytes_data, tensor_data) = bucket
             tensor_data = [
-                (item, tensor.to("cpu", non_blocking=non_blocking)) for item, tensor in tensor_data
+                (item, tensor.to("cpu", non_blocking=False)) for item, tensor in tensor_data
             ]
             result.append((file_name, storage_key, (bytes_data, tensor_data)))
         if non_blocking:
