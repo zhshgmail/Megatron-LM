@@ -1,0 +1,52 @@
+[
+  {
+    "relative": "indexed/train_text_document.bin",
+    "bytes": 238170338,
+    "sha256": "6c355b28fbe3a6d9c20cd1076f3ebc99bae0d7c731117b4ed501feb5f12cb593"
+  },
+  {
+    "relative": "indexed/train_text_document.idx",
+    "bytes": 28391190,
+    "sha256": "a14ae4db75b9802b14827d0e9bcc4abbf590431acc6c02f2b95c5e867eae26f2"
+  },
+  {
+    "relative": "indexed/validation_text_document.bin",
+    "bytes": 499500,
+    "sha256": "397ae25de9c593190ddc226fe15577337038a549046a90eaa785a1fc6fc7e979"
+  },
+  {
+    "relative": "indexed/validation_text_document.idx",
+    "bytes": 59654,
+    "sha256": "6fffc59577567b2a27ea861821bd6f3f81296f6aa17a614b06078b28077599ef"
+  },
+  {
+    "relative": "indexed/test_text_document.bin",
+    "bytes": 572356,
+    "sha256": "2fee0a651f3ac3014d03d06f029bd3544edf7f6a4135cb9f3f3576c866d217d5"
+  },
+  {
+    "relative": "indexed/test_text_document.idx",
+    "bytes": 69598,
+    "sha256": "b78c446c5b2ff6944930895e0d879fa98d0b69a7c8a16835489cfa589ce2dbb3"
+  },
+  {
+    "relative": "tokenizer/vocab.json",
+    "bytes": 1042301,
+    "sha256": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+  },
+  {
+    "relative": "tokenizer/merges.txt",
+    "bytes": 456318,
+    "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+  },
+  {
+    "relative": "source/mcore-selected-source-533cfcc0.tar.gz",
+    "bytes": 1390066,
+    "sha256": "280dcc2bbd4d6be776bcb17a542ba6d1382b1df4843a0135370d8317d6b3d767"
+  },
+  {
+    "relative": "recipe/mcore-te-original-target-source-packet.tar.gz",
+    "bytes": 16426,
+    "sha256": "f10507ee2d5555152fbb0710c31a6a5b9ddbb7e813ac41b80654c241e39e70b5"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-31T00:38:44.916258+00:00",
+  "origin_common_sha256": "5976a6b6310da78a8800112535f55a232808b171cd44bc563dfb6fdee081ec29",
+  "origin_iteration": 50,
+  "args": {
+    "reset_position_ids": false,
+    "reset_attention_mask": false,
+    "eod_mask_loss": false,
+    "seed": 1234,
+    "seq_length": 1024,
+    "create_attention_mask_in_dataloader": true,
+    "mmap_bin_files": true,
+    "num_dataset_builder_threads": 1,
+    "train_iters": 100,
+    "eval_interval": 1000,
+    "eval_iters": 10,
+    "micro_batch_size": 4,
+    "global_batch_size": 32,
+    "num_workers": 2,
+    "dataloader_worker_seed": 1234,
+    "tokenizer_type": "GPT2BPETokenizer",
+    "make_vocab_size_divisible_by": 128,
+    "tensor_model_parallel_size": 4,
+    "rank": 0,
+    "padded_vocab_size": 50688,
+    "consumed_train_samples": 1600
+  },
+  "scope": "Only actualoriginalsaveddata/tokenizerconfiguration exported asprimitives; no checkpoint/weights/optimizer/RNG copied and no coldrestoreclaim. targetcache/outputpaths suppliedbyRootlater.",
+  "source_expected_commit": "533cfcc0df10c10278ca0c141f3d7aaa3618ea0a",
+  "algorithm_cohort": "39ea3df52d520f102e2ffe30afc7c45b22a9df0e",
+  "runtime_only_extraction": "CP311local, nottargetABIvalidation"
+}

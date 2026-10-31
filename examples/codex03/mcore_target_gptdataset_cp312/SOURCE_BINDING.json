@@ -1,0 +1,26 @@
+{
+  "selected_source_commit": "533cfcc0df10c10278ca0c141f3d7aaa3618ea0a",
+  "algorithm_cohort": "39ea3df52d520f102e2ffe30afc7c45b22a9df0e",
+  "strict_reader_sha256": "062adcbb41cde2a0170393d1e47b33cf698faee49603e91a32fb45739a81af83",
+  "original_consumer_scope": "WikiText103 GPT D100-ownD50-E100 remains separate; this is normal CPU data/helper preflight only",
+  "actual_target_helper_sha256": "271ab78945aaef25c861425de84c5da713dd9f1afa9f1184f9870d231e29d08e",
+  "public_files": {
+    "target_gpt_input_consumer.py": {
+      "bytes": 7621,
+      "sha256": "70ffd9c53b9100152f2189318bd4275e16ca149249c8ce79ffe2410c3ec94686"
+    },
+    "ORIGINAL_DATA_CONFIG.json": {
+      "bytes": 1233,
+      "sha256": "69c715c3102ef479eeb9a9d46d860ba404f733a0446db085d4d962daaba490ee"
+    },
+    "INPUTS_EXPECTED.json": {
+      "bytes": 1647,
+      "sha256": "3d2a82f8218c44a65c65a88edfc53e33dceb5b1816abfd44de3630eb2c17f18f"
+    },
+    "README.md": {
+      "bytes": 1238,
+      "sha256": "94991f98b63458ca7cd5e41bb45ec2add05bd652c8db377bc3f18fb613cc94eb"
+    }
+  },
+  "no_binary_model_checkpoint_credentials_or_private_paths": true
+}
