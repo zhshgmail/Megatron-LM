@@ -1,0 +1,18 @@
+{
+  "source_commit": "533cfcc0df10c10278ca0c141f3d7aaa3618ea0a",
+  "algorithm_commit": "39ea3df52d520f102e2ffe30afc7c45b22a9df0e",
+  "strict_reader_sha256": "062adcbb41cde2a0170393d1e47b33cf698faee49603e91a32fb45739a81af83",
+  "upstream": "https://github.com/NVIDIA/Megatron-LM",
+  "helper_sha256": "271ab78945aaef25c861425de84c5da713dd9f1afa9f1184f9870d231e29d08e",
+  "adaptor_commit": "f707a3b6eb9981532c3419c08ea40a8bb5962af5",
+  "provider": {
+    "pydantic": "2.14.0",
+    "pydantic_core": "2.50.0",
+    "annotated_types": "0.8.0",
+    "typing_inspection": "0.4.4",
+    "typing_extensions_from_base": "4.16.0",
+    "core_dso_sha256": "84540a8924e3068da0a3449e2e39ba87a906f30a69013f474928c0ad77a1dc8b"
+  },
+  "scope": "runner environment only; original argv/model/optimizer/TE/source and strict oracle unchanged",
+  "status": "full-model D/E NOT_INVOKED; CP312 data-helper interface independently accepted separately; TE exact Git pin UNKNOWN"
+}
